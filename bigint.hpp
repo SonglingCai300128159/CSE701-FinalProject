@@ -29,8 +29,6 @@ class bigint{
         std::string getNumberBody() const;
         sign getSign() const;
 
-        std::string pureDiv(const std::string& rawLeft, const std::string& rawRight);
-
     private:
         std::string numberBody = "0";
         sign numberSign = POSITIVE; 
@@ -41,6 +39,7 @@ class bigint{
         std::string pureAdder(const std::string& rawLeft, const std::string& rawRight);
         std::string pureSubtracter(const std::string& rawLeft, const std::string& rawRight);
         std::string pureMulti(const std::string& rawLeft, const std::string& rawRight);
+        std::string pureDiv(const std::string& rawLeft, const std::string& rawRight);
         
 
         std::int64_t lookUpTableCharToInt(const char& _rawBit) const;

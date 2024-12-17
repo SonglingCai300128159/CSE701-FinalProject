@@ -3,6 +3,10 @@
 #include <random>
 #include "bigint.hpp"
 
+/**
+ * @brief self-define exception. Throw when result is wrong
+ * 
+ */
 class wrong_result : public std::exception {
 private:
     std::string message;
@@ -321,6 +325,14 @@ int main(){
     std::cout<<"Test " + std::to_string(total) + ". Pass " + std::to_string(countCorrect) + ". Correctness " + std::to_string(countCorrect / total * 100) + "%.\n"; 
 } 
 
+/**
+ * @brief Test with operator +, -, *, /, and check result
+ * 
+ * @param left left int number
+ * @param right right int number
+ * @param operate indicate the operator
+ * @return std::int64_t return 1 when result is right
+ */
 std::int64_t testWithOperator(const std::int64_t left, const std::int64_t right, const char operate){
     bigint bLeft(left);
     bigint bRight(right);
@@ -373,6 +385,13 @@ std::int64_t testWithOperator(const std::int64_t left, const std::int64_t right,
     return 0;
 }
 
+/**
+ * @brief test comparsion ==, !=, >, <, >=, <=
+ * 
+ * @param left left int number to compare
+ * @param right right int number to compare
+ * @return std::int64_t return the correct test number
+ */
 std::int64_t testComparsion(const std::int64_t left, const std::int64_t right){
     bigint bLeft(left);
     bigint bRight(right);
@@ -418,6 +437,13 @@ std::int64_t testComparsion(const std::int64_t left, const std::int64_t right){
     return count;
 }
 
+/**
+ * @brief Test with big int(number > 10^20)
+ * 
+ * @param left first number used for building big int
+ * @param right second number used for building big int
+ * @return std::int64_t return the number of correct test
+ */
 std::int64_t testLongInt(const std::int64_t left, const std::int64_t right){
     bigint bLeft(std::to_string(left) + std::to_string(left) + std::to_string(right) + std::to_string(right));
     bigint bRight(std::to_string(left) + std::to_string(right) + std::to_string(left) + std::to_string(right));
