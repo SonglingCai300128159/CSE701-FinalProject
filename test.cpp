@@ -90,6 +90,24 @@ int main(){
     }catch(const std::exception &e){
         std::cout<<e.what()<<"\n";
     }
+    try{
+        total++;
+        testWithOperator(0, right, '+');
+        countCorrect++;
+    }catch(const wrong_result &e){
+        std::cout<<e.what()<<"\n";
+    }catch(const std::exception &e){
+        std::cout<<e.what()<<"\n";
+    }
+    try{
+        total++;
+        testWithOperator(left, 0, '+');
+        countCorrect++;
+    }catch(const wrong_result &e){
+        std::cout<<e.what()<<"\n";
+    }catch(const std::exception &e){
+        std::cout<<e.what()<<"\n";
+    }
 
     //Test sub
     try{
@@ -128,8 +146,26 @@ int main(){
     }catch(const std::exception &e){
         std::cout<<e.what()<<"\n";
     }
+    try{
+        total++;
+        testWithOperator(0, right, '-');
+        countCorrect++;
+    }catch(const wrong_result &e){
+        std::cout<<e.what()<<"\n";
+    }catch(const std::exception &e){
+        std::cout<<e.what()<<"\n";
+    }
+    try{
+        total++;
+        testWithOperator(left, 0, '-');
+        countCorrect++;
+    }catch(const wrong_result &e){
+        std::cout<<e.what()<<"\n";
+    }catch(const std::exception &e){
+        std::cout<<e.what()<<"\n";
+    }
 
-    //Test nulti
+    //Test multi
     try{
         total++;
         testWithOperator(left, right, '*');
@@ -160,6 +196,24 @@ int main(){
     try{
         total++;
         testWithOperator(-left, -right, '*');
+        countCorrect++;
+    }catch(const wrong_result &e){
+        std::cout<<e.what()<<"\n";
+    }catch(const std::exception &e){
+        std::cout<<e.what()<<"\n";
+    }
+    try{
+        total++;
+        testWithOperator(0, right, '*');
+        countCorrect++;
+    }catch(const wrong_result &e){
+        std::cout<<e.what()<<"\n";
+    }catch(const std::exception &e){
+        std::cout<<e.what()<<"\n";
+    }
+    try{
+        total++;
+        testWithOperator(left, 0, '*');
         countCorrect++;
     }catch(const wrong_result &e){
         std::cout<<e.what()<<"\n";
@@ -198,6 +252,15 @@ int main(){
     try{
         total++;
         testWithOperator(-left, -right, '/');
+        countCorrect++;
+    }catch(const wrong_result &e){
+        std::cout<<e.what()<<"\n";
+    }catch(const std::exception &e){
+        std::cout<<e.what()<<"\n";
+    }
+    try{
+        total++;
+        testWithOperator(0, right, '/');
         countCorrect++;
     }catch(const wrong_result &e){
         std::cout<<e.what()<<"\n";
